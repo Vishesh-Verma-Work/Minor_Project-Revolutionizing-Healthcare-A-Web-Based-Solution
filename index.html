@@ -6,114 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>navigation bar</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background-color: whitesmoke;
-            font-size: 32px;
-        }
-
-        * {
-            margin: 0px;
-            padding: 0px;
-            list-style: none;
-            text-decoration: none;
-        }
-
-        nav {
-            height: 80px;
-            background-color: #6478b9;
-        }
-
-        nav ul {
-            float: right;
-            margin-right: 22px;
-        }
-
-        nav ul li {
-            display: inline-block;
-            line-height: 80px;
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            position: relative;
-            color: white;
-            font-size: 25px;
-            text-transform: uppercase;
-        }
-
-        nav ul li a:hover {
-            color: black;
-            text-decoration: underline;
-        }
-
-        .right {
-            float: left;
-        }
-
-        .btn {
-            font-size: 25px;
-        }
-
-        .image {
-            float: right;
-            margin: 100px 100px;
-            box-shadow: 20px 35px 20px #20202088;
-        }
-
-        .head {
-            font-size: 100px;
-            margin: 20px 40px;
-            color: #7c8eca;
-        }
-
-        .para {
-            font-size: 42px;
-
-            color: rgb(99, 97, 97);
-        }
-
-        .btn {
-            background-color: #7c8eca;
-            padding: 7px 37px;
-            border: none;
-            cursor: pointer;
-            font-size: 42px;
-            border-radius: 28px;
-            margin: 25px 35px;
-        }
-
-        .btn:hover {
-            background-color: #6478b9;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <nav>
-        <ul>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Search</a></li>
-        </ul>
-        <ul class="right">
-            <li><a href="#">x</a></li>
-            <li><a href="#">y</a></li>
-            <li><a href="#">z</a></li>
-        </ul>
+        <div class="header">
+            <div class="left-header">
+                <ul>
+                    <li>Med-Help</li>
+                </ul>
+            </div>
+            <div class="right-header">
+                <ul>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Help</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Search</a></li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <div class="image">
-        <img src="https://images.wisegeek.com/group-of-doctors-standing-and-smiling.jpg" height="">
+
+    <div class="content">
+
+        <div class="left-content">
+                <img src="./img/pic.png">
+        </div>
+
+        <div class="right-content">
+
+
+            <div class="right-content-box">
+                <h1>Revolutionize Your
+                    Healthcare Experience</h1>
+                <p>We've designed a platform that empowers both patients and doctors
+                    transforming the way Healthcare appointments are managed.With our
+                    user-friendly system ,patients can easily log in ,choose a hospital,
+                    explore doctor profiles,and book appointments at their convience.</p>
+                <div class="ctn-btn">
+                    <button class="btn">Book now </button>
+                    <button class="btn">More info</button>
+                </div>
+            </div>
+
+
+
+
+        </div>
     </div>
-    <h1 class="head">Revolutionize Your <br>
-        Healthcare Experience</h1>
-    <p class="para">We've designed a platform that empowers both patients and doctors
-        transforming the<br> way Healthcare appointments are managed.With our
-        user-friendly system ,<br>patients can easily log in ,choose a hospital,
-        explore doctor profiles,and book appointments at their convience.</p>
-    <button class="btn">Book now </button>
-    <button class="btn">More info</button>
+
+
+<div class="space">
+
+</div>
 
 </body>
 
