@@ -85,14 +85,11 @@ nav ul li a:hover {
 
 
 .left-content img{
-    height: 70vh;
-    width: auto;
-    
+    height: 70rem;
 }
 
 
 .right-content {
-
     box-shadow: 0 0 30px #1b1b1bbd;
     border-radius: 2rem 0 0 2rem;
     padding-left: 4rem;
