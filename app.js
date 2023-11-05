@@ -1,5 +1,4 @@
     // Header
-    
 let hamburger = document.querySelector("#hamburger");
 let headerDown  = document.querySelector(".header-down");
 let cross  = document.querySelector("#cross");
