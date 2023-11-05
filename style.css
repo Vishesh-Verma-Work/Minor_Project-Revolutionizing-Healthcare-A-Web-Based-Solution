@@ -92,6 +92,48 @@ nav ul li a:hover {
 
 
 
+.header-down {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 9rem;
+    background-color: #6478b9;
+}
+
+.header-list {
+    transition: 0ms;
+    margin: .2rem 0;
+    padding: .2rem 0;
+    text-align: center;
+    width: 90%;
+    border-radius: .2rem;
+    border: 1px solid rgba(255, 255, 255, 0.404);
+}
+
+.header-list:hover {
+    border: 1px solid rgba(19, 18, 18, 0.404);
+}
+
+.header-list a {
+    color: white;
+}
+
+.header-down {
+    display: none;
+}
+
+#cross {
+    font-size: 1.4rem;
+    display: none;
+}
+
+
+
+
+
+
 
 
 
