@@ -205,6 +205,9 @@ textarea {
 
 
 @media (max-width: 828px) {
+    .code {
+        font-size: .8rem;
+    }
     .left-header {
         margin-left: .3rem;
     }
@@ -233,6 +236,10 @@ textarea {
 
 
 @media (max-width: 673px) {
+    .code {
+        font-size: .6rem;
+    }
+
     .left-header {
         margin-left: .5rem;
     }
@@ -267,6 +274,7 @@ textarea {
 }
 
 @media (max-width: 578px) {
+
     .main-div {
         margin: 1rem;
     }
@@ -292,7 +300,53 @@ textarea {
 
 
 
+   /* niche code wala sec  */
 
+   
+
+.display-section {
+    box-shadow: 1rem 1rem 5rem  rgba(255, 255, 255, 0.392);
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    /* width: 50%; */
+    margin:  0 2rem;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.outter-sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info {
+    /* display: block; */
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+p {
+    display: inline;
+}
+
+
+.da {
+    display: inline-block;
+}
+
+.code 
+{   
+    margin:  0 2rem;
+    text-align: start;
+}
 
 
 
