@@ -455,3 +455,121 @@ nav ul li a:hover {
     }
 
 }
+
+
+
+
+
+
+.working {
+    margin-top: 8rem;
+}
+
+
+.line{
+    justify-content: space-between;
+    text-align: center;
+  
+  }
+  .heading{
+    color: #fff;
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 3rem;
+  }
+  .down-arrow{
+    text-align:center;
+  }
+  .working-model-button{
+    display: inline-block;
+    padding: 1rem 1.5rem;
+    background-color: #7c8eca;
+    color: #fff;
+    border: none;
+    border-radius: .5rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: 0ms;
+    box-shadow: 1rem 1rem 3rem rgba(255, 255, 255, 0.185);
+  }
+  
+  .working-model-button:hover {
+    background-color: rgb(159, 172, 215);
+  }
+  
+  .gap i {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin-left: 25rem;
+  }
+
+  .sp {
+    margin: 4rem;
+  }
+
+  .line i {
+    color: white;
+  }
+
+  .target-btn {
+    border: 1px solid black;
+  }
+
+  @media (max-width: 900px) {
+    .heading {
+        margin-bottom: 2rem;
+    }
+    .working-model-button {
+        padding: .7rem 1.2rem;
+        font-size: 1.3rem;
+    }
+    .working {
+        margin-top: 5rem;
+    }
+    .gap i {
+        margin-left: 16rem;
+    }
+  }
+
+
+  @media (max-width: 640px) {
+    .heading {
+        font-size: 2.2rem;
+        margin-bottom: 2rem;
+    }
+    .working-model-button {
+        padding: .5rem 1rem;
+        font-size: .8rem;
+    }
+    .working {
+        margin-top: 3rem;
+    }
+    .gap i {
+        margin-left: 11rem;
+    }
+  }
+
+
+  @media (max-width: 430px) {
+    .heading {
+        font-size: 2rem;
+        margin-bottom: 1.8rem;
+    }
+    .working-model-button {
+        border-radius: .4rem;
+        padding: .4rem .8rem;
+        font-size: .6rem;
+    }
+    .working {
+        margin-top: 2rem;
+    }
+    .sp {
+        margin: 2rem;
+    }
+    .gap i {
+        margin-left: 8.5rem;
+    }
+  }
