@@ -1,15 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Healthcare Simplified</title>
-    <link rel="stylesheet" href="style.css">
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Login</title>
+    <link rel="stylesheet" href="UserLogin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body>
+  </head>
+  <body>
     <nav>
         <div class="header">
             <div class="left-header">
@@ -19,7 +16,7 @@
             </div>
             <div class="right-header">
                 <ul>
-                    <li><a href="UserLogin.html">Login</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="#">Help</a></li>
                     <li><a href="#">Contact</a></li>
                     <li><a href="Add-hospital.html" target="_parent">Add Hospital</a></li>
@@ -32,7 +29,7 @@
 
     <div class="header-down">
         <div class="header-list">
-            <a href="UserLogin.html">Login</a>
+            <a href="index.html">Home</a>
         </div>
         <div class="header-list">
             <a href="#">Help</a>
@@ -45,37 +42,28 @@
         </div>
     </div>
 
-    <div class="content">
 
-        <div class="left-content">
-                <img src="./img/pic.png">
-        </div>
-
-        <div class="right-content">
-            <div class="right-content-box">
-                <h1>Revolutionize Your
-                    Healthcare Experience</h1>
-                <p>We've designed a platform that empowers both patients and doctors
-                    transforming the way Healthcare appointments are managed.With our
-                    user-friendly system ,patients can easily log in , <span>choose a hospital,
-                    explore doctor profiles,and book appointments at their convience.</span> </p>
-                <div class="ctn-btn">
-                    <button class="btn">Book now </button>
-                    <button class="btn">More info</button>
-                </div>
-            </div>
-
-        </div>
+<div class="main-container">
+    <div class="image-container">
+      <img src="./img/userloginpic.png" alt="User Image" />
     </div>
+    <div class="login-container">
+      <h2>User Login</h2>
+      <form class="login-form" action="/.php">
+        <label for="username">Username :</label>
+        <input type="text" id="username" name="username" required />
 
+        <label for="password">Password </label>
+        <input type="password" id="password" name="password" required />
 
-<div class="space">
-
+        <input type="submit" value="Login" class="login-button" />
+      </form>
+    </div>
 </div>
 
+<div class="space"></div>
 
 
-<script src="app.js"></script>
-</body>
-
+    <script src="UserLogin.js"></script>
+  </body>
 </html>
