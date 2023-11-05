@@ -164,6 +164,10 @@ textarea {
 
 
 @media (max-width: 828px) {
+    .left-header {
+        margin-left: .3rem;
+    }
+
     
     .pic img {
         margin-right: 0;
@@ -190,6 +194,10 @@ textarea {
 
 
 @media (max-width: 673px) {
+    .left-header {
+        margin-left: .5rem;
+    }
+
     .left-header li {
         font-size: 1.3rem;
     }
@@ -208,6 +216,7 @@ textarea {
 
 
 @media (max-width: 527px) {
+    
 .right-header a {
     display: none;
 }
