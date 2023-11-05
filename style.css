@@ -10,13 +10,14 @@ body {
     /* font-size: 50rem; */
 }
 
+
+
+
 .header {
-    padding: 1.1rem 0 1.1rem 1.1rem;
+    padding: 1rem 0 1rem 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* height: 8rem; */
-    font-size: 3rem;
     background-color: #6478b9;
 }
 
@@ -27,7 +28,7 @@ body {
 
 .right-header {
     float: right;
-    margin-right: 2.5rem;
+    margin-right: 1rem;
 }
 
 .right-header ul {
@@ -37,7 +38,8 @@ body {
 }
 
 .right-header a {
-    padding-right: 3rem;
+    font-size: 1rem;
+    padding-right: 1rem;
 }
 
 .right-header i {
@@ -50,9 +52,55 @@ nav ul li a:hover {
 
 .left-header {
     color: white;
-    font-size: 4rem;
-    margin-left: 3rem;
+    font-size: 2rem;
+    margin-left: 0.8rem;
 }
+
+    /* Responsive of header */
+
+@media (max-width: 828px) {
+    .left-header {
+        margin-left: .3rem;
+    }
+}
+
+@media (max-width: 673px) {
+    .left-header {
+        margin-left: .5rem;
+    }
+
+    .left-header li {
+        font-size: 1.3rem;
+    }
+    .header {
+        padding: .7rem 0 .7rem .4rem;
+    }
+}
+
+@media (max-width: 527px) {
+    
+.right-header a {
+    display: none;
+}
+
+.right-header i {
+    color: white;
+   display:block;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .btn {
     background-color: #7c8eca;
@@ -161,15 +209,6 @@ nav ul li a:hover {
 
 @media (max-width : 1838px) {
 
-    .right-header a {
-        font-size: 1.8rem;
-        padding-right: 2.6rem;
-    }
-    .left-header {
-        font-size: 3rem;
-        margin-left: .4rem;
-    }
-
     .right-content-box h1 {
         font-size: 4rem;
     }
@@ -199,6 +238,7 @@ nav ul li a:hover {
 }
 
 @media (max-width : 1380px) {
+
     .right-content {
         padding-top: 0rem;
         padding-bottom: 0rem;
@@ -224,17 +264,6 @@ nav ul li a:hover {
 }
 
 @media (max-width : 1224px) {
-
-    .right-header a {
-        font-size: 2rem;
-        padding-right: 2.2rem;
-    }
-
-    .left-header {
-        font-size: 3rem;
-        margin-left: 1rem;
-    }
-
 
     .right-content-box h1 {
         font-size: 2.5rem;
@@ -312,12 +341,6 @@ nav ul li a:hover {
 
 @media (max-width : 643px) {
 
-    .left-header {
-        font-size: 2.3rem;
-        margin-left: .5rem;
-    }
-    
-
     .content {
         height: 45rem;
         flex-direction: column;
@@ -340,13 +363,6 @@ nav ul li a:hover {
 }
 
 @media (max-width : 460px) {
-    .left-header {
-        font-size: 1.8rem;
-        margin-left: .4rem;
-    }
-    .right-header i {
-        font-size: 2rem;
-    }
 
     .content {
         height: 40rem;
@@ -394,19 +410,6 @@ nav ul li a:hover {
     }
     .content {
         height: 34rem;
-    }
-
-}
-
-
-@media (max-width : 950px) {
-    .right-header a {
-        display: none;
-    }
-
-    .right-header i {
-        color: white;
-       display: inline-block;
     }
 
 }
