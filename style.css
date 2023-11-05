@@ -54,10 +54,6 @@ nav ul li a:hover {
     margin-left: 3rem;
 }
 
-
-
-
-
 .btn {
     background-color: #7c8eca;
     padding: 1rem 8rem;
@@ -67,6 +63,7 @@ nav ul li a:hover {
     font-weight: 400;
     border-radius: .7rem;
     margin: 0 3rem 0 0;
+    color: white;
 }
 
 .ctn-btn {
@@ -109,6 +106,12 @@ nav ul li a:hover {
 
 .right-content-box {
     padding: 3rem;
+}
+
+.right-content-box p span {
+    font-weight: 600;
+    color: #09427D;
+    opacity: .9;
 }
 
 .right-content-box h1 {
@@ -159,8 +162,12 @@ nav ul li a:hover {
 @media (max-width : 1838px) {
 
     .right-header a {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         padding-right: 2.6rem;
+    }
+    .left-header {
+        font-size: 3rem;
+        margin-left: .4rem;
     }
 
     .right-content-box h1 {
@@ -182,7 +189,7 @@ nav ul li a:hover {
     }
 
     .content {
-        height: 50rem;
+        height: 40rem;
     }
 
     .right-content {
@@ -206,7 +213,7 @@ nav ul li a:hover {
     }
 
     .content {
-        height: 48rem;
+        height: 36rem;
     }
 
     .left-content img {

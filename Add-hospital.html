@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Details Form</title>
+    <link rel="stylesheet" href="Add-hospital.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hospital Details Form</h1>
+        <form action="/act.php">
+            <div class="form-group">
+                <label for="hospitalName">Hospital Name:</label>
+                <input type="text" id="hospitalName" name="hospitalName" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode:</label>
+                <input type="text" id="pincode" name="pincode" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber1">Phone Number 1:</label>
+                <input type="text" id="phoneNumber1" name="phoneNumber1" required>
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber2">Phone Number 2:</label>
+                <input type="text" id="phoneNumber2" name="phoneNumber2">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="email2">Email 2:</label>
+                <input type="email" id="email2" name="email2">
+            </div>
+            <div class="form-group form-group-description">
+                <label for="hospitalDescription">Description/Type of Hospital:</label>
+                <textarea id="hospitalDescription" name="hospitalDescription" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="doctorStaff">Doctors and Staff:</label>
+                <input type="text" id="doctorStaff" name="doctorStaff" required>
+            </div>
+            <div class="form-group">
+                <label for="operationHours">Operation Hours:</label>
+                <input type="text" id="operationHours" name="operationHours" required>
+            </div>
+            <div class="form-group">
+                <label for="appointmentService">Appointment Service:</label>
+                <input type="checkbox" id="appointmentService" name="appointmentService" value="yes">
+            </div>
+            <div class="form-group">
+                <label for="certificationAuthentication">Certification and Authentication:</label>
+                <input type="checkbox" id="certificationAuthentication" name="certificationAuthentication" value="yes">
+            </div>
+            <button type="submit" class="btn-submit" id="submit">Submit Infomation</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+
