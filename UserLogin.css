@@ -128,7 +128,7 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 40rem;
+    height: 50rem;
     background-color: #4E46A6;
 }
 
@@ -136,7 +136,7 @@ nav ul li a:hover {
   .login-container {
     /* width: 300px; */
     width: 40%;
-    height: 75%;
+    height: 55%;
     padding: 20px;
     border: 1px solid #d8dbe2;
     border-radius: 5px;
