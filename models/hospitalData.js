@@ -41,7 +41,8 @@ const hospitalSchema = new mongoose.Schema({
   consultingFree: {
     type: Number,
     required: true
-  }
+  },
+  img: String
 });
 
 const Hospital = mongoose.model('Hospital', hospitalSchema);

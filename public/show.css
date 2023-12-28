@@ -101,6 +101,8 @@ span {
 
 .img img {
     height: 16rem;
+    margin: 0 0 0 15rem;
+    width: 30rem;
     /* width: 50%; */
 }
 

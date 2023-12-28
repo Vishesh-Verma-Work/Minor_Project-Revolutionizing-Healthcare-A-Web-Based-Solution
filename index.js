@@ -6,12 +6,19 @@ const bodyParser = require("body-parser");
 const datas = require("./models/reg.js");
 const Hospitals = require("./models/hospitalData.js");
 
+const multer  = require('multer')
+// const upload = multer({ dest: 'uploads/' })
+
+
+
+
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 
 const { getEnabledCategories } = require("trace_events");
@@ -25,6 +32,21 @@ main().then(() => {
 async function main() {
     await mongoose.connect('mongodb://127.0.0.1:27017/mini');
 }
+
+
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) { // cb = call back
+      return cb(null, "./uploads"); //null => no condition check kro
+    },
+    filename: function (req, file, cb) {
+        return cb(null, `${Date.now()}-${file.originalname}`);
+    },
+  });
+
+  const upload = multer({ storage });
+
+
+
 
 
 // const methodOverride = require('method-override')    
@@ -88,7 +110,7 @@ app.get("/dlt", async (req, res) => {
 });
 
 
-app.post("/FormFill", (req, res) => {
+app.post("/FormFill", upload.single("img"), (req, res) => {
     let { city,
         pin,
         hospitalName,
@@ -102,7 +124,16 @@ app.post("/FormFill", (req, res) => {
         doctorPhone,
         doctorEmail,
         docWorkingHour,
-        consultingFree } = req.body;
+        consultingFree,
+        img,
+     } = req.body;
+
+     
+
+     let pathh = req.file.path;
+
+     pathh = pathh.substring(8);
+
 
     let newData = new Hospitals({
         city : city,
@@ -118,10 +149,16 @@ app.post("/FormFill", (req, res) => {
         doctorPhone : doctorPhone,
         doctorEmail : doctorEmail,
         docWorkingHour : docWorkingHour,
-        consultingFree : consultingFree
+        consultingFree : consultingFree,
+        img : pathh
     })
 
     console.log(newData);
+    console.log(pathh);
+    // console.log(req.file);
+    // console.log("And bhai ye bhi");
+    
+    // console.log(path);
     newData.save();
     res.render("index.ejs");
 });
@@ -155,6 +192,19 @@ app.get("/FormFill", (req, res) => {
     // await datas.deleteMany( {});
     res.render("hospitalDataInput.ejs");
 });
+
+
+
+
+// image multer usage
+// app.post("/FormFill", upload.single("img"), (req, res) => {
+//     console.log(req.body);
+//     console.log("Andddd");
+//     console.log(req.file);
+//     res.render("hospitalDataInput.ejs");
+// });
+
+
 
 
 
