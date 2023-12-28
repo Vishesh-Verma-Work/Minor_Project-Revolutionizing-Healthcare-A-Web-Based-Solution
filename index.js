@@ -1,0 +1,275 @@
+const express = require("express");
+const app = express();
+const path = require("path");
+const mongoose = require('mongoose');
+const bodyParser = require("body-parser");
+const datas = require("./models/reg.js");
+const Hospitals = require("./models/hospitalData.js");
+
+app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.set("view engine", "ejs");
+app.set("views", path.join(__dirname, "views"));
+
+app.use(express.static(path.join(__dirname, "public")));
+
+
+const { getEnabledCategories } = require("trace_events");
+const { Console } = require("console");
+
+
+main().then(() => {
+    console.log("Connected to the MongoDB database");
+}).catch(() => console.log(err));
+
+async function main() {
+    await mongoose.connect('mongodb://127.0.0.1:27017/mini');
+}
+
+
+// const methodOverride = require('method-override')    
+// app.use(methodOverride('_method'))
+
+let port = 8080;
+
+
+app.listen(port, () => {
+    console.log(`Server is listening on port : ${port}`);
+});
+
+app.get("/", (req, res) => {
+    res.render("login.ejs");
+});
+
+
+app.get("/newReg", (req, res) => {
+    res.render("newReg.ejs");
+});
+
+app.post("/new", (req, res) => {
+    let { name, email, password } = req.body;
+    let newData = new datas({
+        name: name,
+        email: email,
+        password: password
+    });
+    console.log(newData);
+    newData.save();
+    res.render("login.ejs");
+});
+
+
+app.post("/check", async (req, res) => {
+    try {
+        let { email, password } = req.body;
+
+        let foundData = await datas.findOne({ email: email });
+
+        if (!foundData) {
+            res.render("userNotFound.ejs", {data : "No User Found "});
+        } else {
+            if (foundData.password === password) {
+                res.render("index.ejs");
+            } else {
+                console.log(foundData);
+                res.render("loginFail.ejs");
+            }
+        }
+    } catch (err) {
+        console.log(err);
+        res.send("Error occurred");
+    }
+});
+
+
+app.get("/dlt", async (req, res) => {
+    await datas.deleteMany({});
+    res.render("login.ejs");
+});
+
+
+app.post("/FormFill", (req, res) => {
+    let { city,
+        pin,
+        hospitalName,
+        emergencyAvailable,
+        hospitalPhone1,
+        hospitalPhone2,
+        hospitalEmail1,
+        hospitalEmail2,
+        doctorName,
+        specialization,
+        doctorPhone,
+        doctorEmail,
+        docWorkingHour,
+        consultingFree } = req.body;
+
+    let newData = new Hospitals({
+        city : city,
+        pin : pin,
+        hospitalName : hospitalName,
+        emergencyAvailable : emergencyAvailable,
+        hospitalPhone1 : hospitalPhone1,
+        hospitalPhone2 : hospitalPhone2,
+        hospitalEmail1 : hospitalEmail1,
+        hospitalEmail2 : hospitalEmail2,
+        doctorName : doctorName,
+        specialization : specialization,
+        doctorPhone : doctorPhone,
+        doctorEmail : doctorEmail,
+        docWorkingHour : docWorkingHour,
+        consultingFree : consultingFree
+    })
+
+    console.log(newData);
+    newData.save();
+    res.render("index.ejs");
+});
+
+
+app.get("/book", (req, res) => {
+    res.render("book.ejs");
+});
+
+app.get("/home", (req, res) => {
+    res.render("index.ejs");
+});
+
+
+app.post("/search", async (req, res) => {
+    let { city, specialization } = req.body;
+
+    const matchedHospitals = await  Hospitals.find({ city: city, specialization: specialization })
+ 
+    if(matchedHospitals.length === 0){
+        res.render("userNotFound.ejs", {data : "No Hospitals are avl. right now"});
+    }
+
+
+    res.render("show.ejs", {matchedHospitals});
+
+});
+
+
+app.get("/FormFill", (req, res) => {
+    // await datas.deleteMany( {});
+    res.render("hospitalDataInput.ejs");
+});
+
+
+
+// let hospitalDataObjectsDelhi = [
+//     {
+//       city: "Delhi",
+//       pin: 110001,
+//       hospitalName: "Narayana Hospitals",
+//       emergencyAvailable: "true",
+//       hospitalPhone1: 7234723723,
+//       hospitalPhone2: 9876543210,
+//       hospitalEmail1: "info@narayanadelhi.com",
+//       hospitalEmail2: "admin@narayanadelhi.com",
+//       doctorName: "Dr. Gupta",
+//       specialization: "Cardiology",
+//       doctorPhone: 9998887770,
+//       doctorEmail: "drgupta@narayanadelhi.com",
+//       docWorkingHour: "9 AM - 5 PM",
+//       consultingFree: 1200
+//     }
+//   ];
+
+  
+
+
+
+// let hospitalDataObjectsChandraGhaziabad = [
+//     {
+//       city: "Ghaziabad",
+//       pin: 201001,
+//       hospitalName: "Chandra Hospital and Medical Centre",
+//       emergencyAvailable: "true",
+//       hospitalPhone1: 7234723730,
+//       hospitalPhone2: 9876543230,
+//       hospitalEmail1: "info@chandrahospgzb.com",
+//       hospitalEmail2: "admin@chandrahospgzb.com",
+//       doctorName: "Dr. Akash Singh",
+//       specialization: "Cardiology",
+//       doctorPhone: 9998888300,
+//       doctorEmail: "drakash@chandrahospgzb.com",
+//       docWorkingHour: "9 AM - 5 PM",
+//       consultingFree: 3200
+//     },
+//     {
+//       city: "Ghaziabad",
+//       pin: 201001,
+//       hospitalName: "Chandra Hospital and Medical Centre",
+//       emergencyAvailable: "true",
+//       hospitalPhone1: 7234723731,
+//       hospitalPhone2: 9876543231,
+//       hospitalEmail1: "info@chandrahospgzb.com",
+//       hospitalEmail2: "admin@chandrahospgzb.com",
+//       doctorName: "Dr. Natasha Verma",
+//       specialization: "Orthopedics",
+//       doctorPhone: 9998888301,
+//       doctorEmail: "drnatasha@chandrahospgzb.com",
+//       docWorkingHour: "10 AM - 6 PM",
+//       consultingFree: 3500
+//     },
+//     {
+//       city: "Ghaziabad",
+//       pin: 201001,
+//       hospitalName: "Chandra Hospital and Medical Centre",
+//       emergencyAvailable: "true",
+//       hospitalPhone1: 7234723732,
+//       hospitalPhone2: 9876543232,
+//       hospitalEmail1: "info@chandrahospgzb.com",
+//       hospitalEmail2: "admin@chandrahospgzb.com",
+//       doctorName: "Dr. Rohan Gupta",
+//       specialization: "Neurology",
+//       doctorPhone: 9998888302,
+//       doctorEmail: "drrohan@chandrahospgzb.com",
+//       docWorkingHour: "8 AM - 4 PM",
+//       consultingFree: 3300
+//     },
+//     {
+//       city: "Ghaziabad",
+//       pin: 201001,
+//       hospitalName: "Chandra Hospital and Medical Centre",
+//       emergencyAvailable: "true",
+//       hospitalPhone1: 7234723733,
+//       hospitalPhone2: 9876543233,
+//       hospitalEmail1: "info@chandrahospgzb.com",
+//       hospitalEmail2: "admin@chandrahospgzb.com",
+//       doctorName: "Dr. Ananya Reddy",
+//       specialization: "Oncology",
+//       doctorPhone: 9998888303,
+//       doctorEmail: "drananya@chandrahospgzb.com",
+//       docWorkingHour: "10 AM - 6 PM",
+//       consultingFree: 3400
+//     },
+//     {
+//       city: "Ghaziabad",
+//       pin: 201001,
+//       hospitalName: "Chandra Hospital and Medical Centre",
+//       emergencyAvailable: "true",
+//       hospitalPhone1: 7234723734,
+//       hospitalPhone2: 9876543234,
+//       hospitalEmail1: "info@chandrahospgzb.com",
+//       hospitalEmail2: "admin@chandrahospgzb.com",
+//       doctorName: "Dr. Karishma Singh",
+//       specialization: "Pediatrics",
+//       doctorPhone: 9998888304,
+//       doctorEmail: "drkarishma@chandrahospgzb.com",
+//       docWorkingHour: "8 AM - 4 PM",
+//       consultingFree: 3600
+//     }
+//   ];
+  
+//   // Inserting the data collections into the database for Chandra Hospital in Ghaziabad
+//   Hospitals.insertMany(hospitalDataObjectsChandraGhaziabad)
+//     .then(() => {
+//       console.log("Data inserted successfully for Chandra Hospital in Ghaziabad");
+//     })
+//     .catch((err) => {
+//       console.error("Error inserting data:", err);
+//     });
+  

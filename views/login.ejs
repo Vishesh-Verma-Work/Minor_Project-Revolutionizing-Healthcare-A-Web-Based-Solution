@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health-Care Simplified</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login-container">
+      <div class="left">
+        <form class="login-form" method="post" action="/check">
+          <h2>Login</h2>
+          <div class="input-container">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="email">
+          </div>
+          <div class="input-container">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="password">
+          </div>
+          <button type="submit">Sign In</button>
+          <p class="create-account">Don't have an account? <a href="/newReg">Sign Up</a></p>
+        </form>
+      </div>
+      <div class="right">
+        <img src="/img/login.jpg" alt="LogIn IMG">
+      </div>
+      </div>
+</body>
+</html>

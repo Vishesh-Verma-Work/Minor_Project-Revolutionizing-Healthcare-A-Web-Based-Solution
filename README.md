@@ -1,2 +1,0 @@
-# Minor_Project-Revolutionizing-Healthcare-A-Web-Based-Solution
-Our project revolutionizes healthcare by solving the issues of long hospital queues, cumbersome appointment booking, and ensuring data security. It empowers patients to book appointments conveniently, reduces waiting times, and provides doctors with real-time appointment information. Join us in simplifying healthcare for a better experience.
