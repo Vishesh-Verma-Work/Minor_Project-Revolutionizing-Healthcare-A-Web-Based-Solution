@@ -87,7 +87,7 @@ span {
     background-color: rgba(39, 202, 202, 0.322);
     border-radius: 1rem;
     margin: 2rem;
-    padding: 2rem 4rem;
+    padding: 0rem 4rem;
     width:70%;
     text-align: start;
     border: 1.2px solid black;
@@ -180,11 +180,15 @@ button:hover {
 }
 
 .timeSlot {
-    margin: 2.5rem 0;
+    margin: 3.2rem 0;
 }
 
 .time {
-    padding: 0 3rem 2rem 3rem;
-    padding-top: 0.6rem;
+    padding: 0 6rem 2rem 3rem;
+    padding-top: 2rem;
     /* background-color: blue; */
+}
+
+.btnn {
+    margin: .5rem 0;
 }

@@ -140,17 +140,15 @@
                     
                 </div>
                 <div class="slot">
-                <% for(let i=0; i<=6; i++) { %>
+                <% for(let i=0; i<=13; i++) { %>
+                        <form action="/search/<%=id%>/book/<%=letter[i] %>" method="post">
 
-                    <% for(let j=0; j<=1; j++) { %>
-                        <form action="/search/<%=id%>/book/<%=letter[i] + num[j]%>" method="post">
-
-                            <button type="submit" id="<%=letter[i] + num[j]%>">
-                                <%=letter[i] + num[j] %>
+                            <button type="submit" id="<%=letter[i]%>" class="btnn">
+                                Register
                             </button>
+                            
                         </form>
-                        <% } %>
-                            <br>
+                            
                             <% } %>
                         </div>
             </div>
@@ -178,6 +176,10 @@
     </form>
 
     <div class="space"></div>
+
+
+
+
 
 </body>
 
