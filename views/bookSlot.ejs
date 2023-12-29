@@ -5,119 +5,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avl Data</title>
-    <link rel="stylesheet" href="show.css">
+    <link rel="stylesheet" href="/bookSlot.css">
 </head>
 
 <body>
 
     <div class="data">
-        <% for(data of matchedHospitals) { %>
-            <div class="sec">
-                <div class="l">
-                    <div class="name">
-                        <div class="ejs">
-                            <%= data.hospitalName %>
-                        </div>
+
+        <div class="sec">
+            <div class="l">
+                <div class="name">
+                    <div class="ejs">
+                        <%= data.hospitalName %>
                     </div>
-                    <div class="des dess">
-                        <h4 style="display: inline-block;">Emergency Available : </h4>
-                        <div class="ejs">
-                            <%= data.emergencyAvailable %>
-                        </div>
-                    </div>
-
-
-                    <div class="des dess">
-                        <h4 style="display: inline-block;">City : </h4>
-                        <div class="ejs">
-                            <%= data.city %>
-                        </div>
-                        &nbsp; &nbsp;
-                        <h4 style="display: inline-block;">Pin Code : </h4>
-                        <div class="ejs">
-                            <%= data.pin %>
-                        </div>
-                    </div>
-
-                    <div class="des dess">
-                        <h4 style="display: inline-block;">Primary Phone : </h4>
-                        <div class="ejs">
-                            <%= data.hospitalPhone1 %>
-                        </div>
-                    </div>
-
-                    <div class="des dess">
-                        <h4 style="display: inline-block;">Secondary Phone : </h4>
-                        <div class="ejs">
-                            <%= data.hospitalPhone2 %>
-                        </div>
-                    </div>
-
-                    <div class="des dess">
-                        <h4 style="display: inline-block;">Primary Email : </h4>
-                        <div class="ejs">
-                            <%= data.hospitalEmail1 %>
-                        </div>
-                    </div>
-
-
-                    <div class="line"></div>
-
-
-
-                    <div class="dname">
-                        <div class="ejs">
-                            <%= data.doctorName %>
-                        </div>
-                    </div>
-
-                    <div class="des dess">
-                        <h4 style="display: inline-block;">Specialization : </h4>
-                        <div class="ejs">
-                            <%= data.specialization %>
-                        </div>
-                    </div>
-
-                    <div class="des dess">
-                        <h4 style="display: inline-block;">Working Hour : </h4>
-                        <div class="ejs">
-                            <%= data.docWorkingHour %>
-                        </div>
-                    </div>
-
-                    <div class="des dess ">
-                        <h4 style="display: inline-block;">Consulting Fee : </h4>
-                        <div class="rup" style="display: inline-block;">
-                            <span>&#8377;</span>
-                        </div>
-                        <div class="ejs">
-                            <%= data.consultingFree %>
-                        </div>
-                    </div>
-
-
-                    <form action="/search/<%= data._id %>/book" method="post"><button>Book Your Slot</button></form>
-
                 </div>
-                <div class="img">
-                    <img src="/uploads/<%=data.img%>" alt="hell">
+                <div class="des dess">
+                    <h4 style="display: inline-block;">Emergency Available : </h4>
+                    <div class="ejs">
+                        <%= data.emergencyAvailable %>
+                    </div>
                 </div>
+
+
+                <div class="des dess">
+                    <h4 style="display: inline-block;">City : </h4>
+                    <div class="ejs">
+                        <%= data.city %>
+                    </div>
+                    &nbsp; &nbsp;
+                    <h4 style="display: inline-block;">Pin Code : </h4>
+                    <div class="ejs">
+                        <%= data.pin %>
+                    </div>
+                </div>
+
+                <div class="des dess">
+                    <h4 style="display: inline-block;">Primary Phone : </h4>
+                    <div class="ejs">
+                        <%= data.hospitalPhone1 %>
+                    </div>
+                </div>
+
+                <div class="des dess">
+                    <h4 style="display: inline-block;">Secondary Phone : </h4>
+                    <div class="ejs">
+                        <%= data.hospitalPhone2 %>
+                    </div>
+                </div>
+
+                <div class="des dess">
+                    <h4 style="display: inline-block;">Primary Email : </h4>
+                    <div class="ejs">
+                        <%= data.hospitalEmail1 %>
+                    </div>
+                </div>
+
+
+                <div class="line"></div>
+
+                <div class="dname">
+                    <div class="ejs">
+                        <%= data.doctorName %>
+                    </div>
+                </div>
+
+                <div class="des dess">
+                    <h4 style="display: inline-block;">Specialization : </h4>
+                    <div class="ejs">
+                        <%= data.specialization %>
+                    </div>
+                </div>
+
+                <div class="des dess">
+                    <h4 style="display: inline-block;">Working Hour : </h4>
+                    <div class="ejs">
+                        <%= data.docWorkingHour %>
+                    </div>
+                </div>
+
+                <div class="des dess ">
+                    <h4 style="display: inline-block;">Consulting Fee : </h4>
+                    <div class="rup" style="display: inline-block;">
+                        <span>&#8377;</span>
+                    </div>
+                    <div class="ejs">
+                        <%= data.consultingFree %>
+                    </div>
+                </div>
+
+
             </div>
+            <div class="img">
+                <img src="/uploads/<%=data.img%>" alt="hell">
+            </div>
+        </div>
 
-            <% } %>
+
+
 
 
     </div>
 
-    <form action="/book" method="GET" style="display: inline-block;">
-        <button type="submit">Back To Select</button>
-    </form>
-    &nbsp; &nbsp;
-    <form action="/home" method="GET" style="display: inline-block;">
-        <button type="submit">Back To Home</button>
-    </form>
 
-    <div class="space"></div>
+    <% for(let i=0; i<=6; i++) { %>
+
+        <% for(let j=0; j<=1; j++) { %>
+            <form action="/search/<%=id%>/book/<%=letter[i] + num[j]%>" method="post">
+
+            <button type="submit" id="<%=letter[i] + num[j]%>">
+                <%=letter[i] + num[j] %>
+            </button>
+            </form>
+            <% } %> 
+            <br>
+                <% } %>
+
+
+
+                    <form action="/home" method="GET" style="display: inline-block;">
+                        <button type="submit">Back To Home</button>
+                    </form>
+
+                    <div class="space"></div>
 
 </body>
 

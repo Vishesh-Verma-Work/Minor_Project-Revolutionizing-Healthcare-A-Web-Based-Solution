@@ -102,11 +102,29 @@ app.post("/search/:id/book", async (req, res) => {
     let data = await Hospitals.findOne({ _id : id  });
     console.log(`ID : ${id} is selected`);
     console.log(`All data : ${data}`);
-    res.render("bookSlot.ejs", {data});
+    res.render("bookSlot.ejs", {data, letter : letter = ["a","b","c","d","e","f","g"], num : num = [1,2] ,id });
 });
 
+
+app.post("/search/:id/book/:slot", async (req, res) => {
+    const { id, slot } = req.params;
+    console.log(`Slot ID : ${slot} is selected`);
+    try {
+      const updatedHospital = await Hospitals.findOneAndUpdate(
+        { _id: id },
+        { $set: { [slot]: true } }, 
+        { new: true }
+      );
+      res.send(`Slot ${slot} for hospital ${id} booked.`);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send("Error updating slot.");
+    }
+  });
+
+
+
 app.get("/dlt", async (req, res) => {
-    // await datas.deleteMany({});
     res.render("login.ejs");
 });
 
