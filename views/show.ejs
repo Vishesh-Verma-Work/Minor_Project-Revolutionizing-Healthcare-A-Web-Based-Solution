@@ -10,6 +10,8 @@
 
 <body>
 
+    <h1>Hospitals Near by location</h1>
+
     <div class="data">
         <% for(data of matchedHospitals) { %>
             <div class="sec">
@@ -19,13 +21,7 @@
                             <%= data.hospitalName %>
                         </div>
                     </div>
-                    <div class="des dess">
-                        <h4 style="display: inline-block;">Emergency Available : </h4>
-                        <div class="ejs">
-                            <%= data.emergencyAvailable %>
-                        </div>
-                    </div>
-
+                  
 
                     <div class="des dess">
                         <h4 style="display: inline-block;">City : </h4>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book your Slot</title>
+    <link rel="stylesheet" href="/emergencySelect.css">
+</head>
+<body>
+    
+<div class="options">
+    <div class="left">
+    <h2>Select The Data</h2>
+    <form action="/search" method="post">
+    <select id="city" name="city" required>
+        <option value="Delhi">Delhi</option>
+        <option value="Ghaziabad">Ghaziabad</option>
+        <option value="Gurugram">Gurugram</option>
+        <option value="Noida">Noida</option>
+        <option value="Lucknow">Lucknow</option>
+    </select>
+
+
+    <select id="specialization" name="specialization" required>
+        <option value="Cardiology">Cardiology</option>
+        <option value="Orthopedics">Orthopedics</option>
+        <option value="Neurology">Neurology</option>
+        <option value="Oncology">Oncology</option>
+        <option value="Pediatrics">Pediatrics</option>
+    </select>
+<button type="submit" id="btn">Get Instant Details</button>
+</form>
+</div>
+<div class="right">
+    <img src="/img/emer.png" alt="img">
+</div>
+</div>
+
+
+
+
+</body>
+</html>

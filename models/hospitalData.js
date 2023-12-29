@@ -13,15 +13,15 @@ const hospitalSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  emergencyAvailable: {
-    type: String,
-     enum: ['true', 'false', 'NA'] // Enumerating possible string values
-  },
   hospitalPhone1: {
     type: Number,
     required: true
   },
   hospitalPhone2: Number,
+  emergencyNumber: {
+    type: Number,
+    required: true
+  },
   hospitalEmail1: String,
   hospitalEmail2: String,
   doctorName: {

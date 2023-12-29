@@ -10,6 +10,9 @@
 
 <body>
 
+ <h1>Book Your Slot here</h1>
+
+
     <div class="data">
 
         <div class="sec">
@@ -141,9 +144,11 @@
                 </div>
                 <div class="slot">
                 <% for(let i=0; i<=13; i++) { %>
+                    <% const slotId = letter[i]; %>
+        <% const slotValue = data[slotId]; %>
                         <form action="/search/<%=id%>/book/<%=letter[i] %>" method="post">
 
-                            <button type="submit" id="<%=letter[i]%>" class="btnn">
+                            <button type="submit" id="<%=letter[i]%>" class="btnn <%= slotValue ? 'booked' : 'notBooked' %>">
                                 Register
                             </button>
                             

@@ -129,13 +129,17 @@ app.get("/dlt", async (req, res) => {
     res.render("login.ejs");
 });
 
+app.get("/emergency/book", async (req, res) => {
+    res.render("emergencySelect.ejs");
+});
+
 app.post("/FormFill", upload.single("img"), (req, res) => {
     let { city,
         pin,
         hospitalName,
-        emergencyAvailable,
         hospitalPhone1,
         hospitalPhone2,
+        emergencyNumber,
         hospitalEmail1,
         hospitalEmail2,
         doctorName,
@@ -156,9 +160,9 @@ app.post("/FormFill", upload.single("img"), (req, res) => {
         city : city,
         pin : pin,
         hospitalName : hospitalName,
-        emergencyAvailable : emergencyAvailable,
         hospitalPhone1 : hospitalPhone1,
         hospitalPhone2 : hospitalPhone2,
+        emergencyNumber : emergencyNumber,
         hospitalEmail1 : hospitalEmail1,
         hospitalEmail2 : hospitalEmail2,
         doctorName : doctorName,
