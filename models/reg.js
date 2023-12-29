@@ -5,8 +5,21 @@ const detail = new mongoose.Schema({
         type: String,
         required: true
     },
+    
+    phone: {
+        type: Number,
+        required: true
+    },
     email: {
         type: String,
+        required: true
+    },
+    city: {
+        type: String,
+        required: true
+    },
+    pin: {
+        type: Number,
         required: true
     },
     password: {

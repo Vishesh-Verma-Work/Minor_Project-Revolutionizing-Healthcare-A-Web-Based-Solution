@@ -54,6 +54,8 @@ h1 {
     width: 101%;
   }
 
+
+  input[type="file"],
   input[type="text"],
   input[type="number"],
   input[type="tel"],

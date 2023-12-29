@@ -577,6 +577,18 @@ nav ul li a:hover {
 
 
 
+.right-header img {
+    height: 3.8rem;
+    border-radius: 50%;
+}
+
+.right-header li {
+    margin: 0 .7rem;
+}
+.right-header a {
+    cursor: pointer;
+}
+
 #languageSwitchButton {
     background-color: #007BFF;
     color: #fff;

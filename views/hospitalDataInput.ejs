@@ -11,77 +11,89 @@
 
     <h1>Hospital Data Form</h1>
 
-<div class="main">
-    
-    <div class="left">
-        <form action="/FormFill" method="post" enctype="multipart/form-data">
-            <label for="city">City:</label>
-            <input type="text" id="city" name="city" required><br>
-    
-            <label for="pin">PIN:</label>
-            <input type="number" id="pin" name="pin" required><br>
-    
-            <label for="hospitalName">Hospital Name:</label>
-            <input type="text" id="hospitalName" name="hospitalName" required><br>
-    
-            <label for="emergencyAvailable">Emergency Available:</label>
-            <select id="emergencyAvailable" name="emergencyAvailable">
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-                <option value="NA">Not Applicable</option>
-            </select><br>
-    
-            <label for="hospitalPhone1">Hospital Phone 1:</label>
-            <input type="tel" id="hospitalPhone1" name="hospitalPhone1" required><br>
-    
-            <label for="hospitalPhone2">Hospital Phone 2:</label>
-            <input type="tel" id="hospitalPhone2" name="hospitalPhone2"><br>
-    
-            <label for="hospitalEmail1">Hospital Email 1:</label>
-            <input type="email" id="hospitalEmail1" name="hospitalEmail1"><br>
-    
-            <label for="hospitalEmail2">Hospital Email 2:</label>
-            <input type="email" id="hospitalEmail2" name="hospitalEmail2"><br>
-    
-            <label for="doctorName">Doctor Name:</label>
-            <input type="text" id="doctorName" name="doctorName" required><br>
-    
-            <label for="specialization">Specialization:</label>
-            <select id="specialization" name="specialization" required>
-                <option value="Cardiology">Cardiology</option>
-                <option value="Orthopedics">Orthopedics</option>
-                <option value="Neurology">Neurology</option>
-                <option value="Oncology">Oncology</option>
-                <option value="Pediatrics">Pediatrics</option>
-            </select><br>
-    
-            <label for="doctorPhone">Doctor Phone:</label>
-            <input type="tel" id="doctorPhone" name="doctorPhone" required><br>
-    
-            <label for="doctorEmail">Doctor Email:</label>
-            <input type="email" id="doctorEmail" name="doctorEmail"><br>
-    
-            <label for="docWorkingHour">Doctor's Working Hours:</label>
-            <input type="text" id="docWorkingHour" name="docWorkingHour"><br>
-    
-            <label for="consultingFree">Consulting Free (1 for Yes, 0 for No):</label>
-            <input type="number" id="consultingFree" name="consultingFree" required><br>
-    
-<br>
-<input type="file" id="img" name="img"/>
-          
+    <div class="main">
 
-              
+        <div class="left">
+            <form action="/FormFill" method="post" enctype="multipart/form-data">
 
-            <button type="submit">Submit</button>
-        </form>
+                <label for="city">City:</label>
+                <select id="city" name="city" required>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Ghaziabad">Ghaziabad</option>
+                    <option value="Gurugram">Gurugram</option>
+                    <option value="Noida">Noida</option>
+                    <option value="Lucknow">Lucknow</option>
+                </select>
+
+
+                <!-- <label for="city">City:</label>
+                <input type="text" id="city" name="city" required><br> -->
+
+                <label for="pin">PIN:</label>
+                <input type="number" id="pin" name="pin" required><br>
+
+                <label for="hospitalName">Hospital Name:</label>
+                <input type="text" id="hospitalName" name="hospitalName" required><br>
+
+                <label for="emergencyAvailable">Emergency Available:</label>
+                <select id="emergencyAvailable" name="emergencyAvailable">
+                    <option value="true">Yes</option>
+                    <option value="false">No</option>
+                    <option value="NA">Not Applicable</option>
+                </select><br>
+
+                <label for="hospitalPhone1">Hospital Phone 1:</label>
+                <input type="tel" id="hospitalPhone1" name="hospitalPhone1" required><br>
+
+                <label for="hospitalPhone2">Hospital Phone 2:</label>
+                <input type="tel" id="hospitalPhone2" name="hospitalPhone2"><br>
+
+                <label for="hospitalEmail1">Hospital Email 1:</label>
+                <input type="email" id="hospitalEmail1" name="hospitalEmail1"><br>
+
+                <label for="hospitalEmail2">Hospital Email 2:</label>
+                <input type="email" id="hospitalEmail2" name="hospitalEmail2"><br>
+
+                <label for="doctorName">Doctor Name:</label>
+                <input type="text" id="doctorName" name="doctorName" required><br>
+
+                <label for="specialization">Specialization:</label>
+                <select id="specialization" name="specialization" required>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Oncology">Oncology</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                </select><br>
+
+                <label for="doctorPhone">Doctor Phone:</label>
+                <input type="tel" id="doctorPhone" name="doctorPhone" required><br>
+
+                <label for="doctorEmail">Doctor Email:</label>
+                <input type="email" id="doctorEmail" name="doctorEmail"><br>
+
+                <label for="docWorkingHour">Doctor's Working Hours:</label>
+                <input type="text" id="docWorkingHour" name="docWorkingHour"><br>
+
+                <label for="consultingFree">Consulting Free (1 for Yes, 0 for No):</label>
+                <input type="number" id="consultingFree" name="consultingFree" required><br>
+
+                <label for="img">Picture:</label>
+                <input type="file" id="img" name="img" />
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div class="right">
+            <img src="/img/form1.png" alt="img"> <br> <br> <br> <br>
+            <img src="/img/form3.png" alt="img">
+        </div>
     </div>
- 
-    <div class="right">
-        <img src="/img/form1.png" alt="img"> <br> <br> <br> <br>
-        <img src="/img/form3.png" alt="img">
+
+    <div class="space" style="margin-bottom: 10rem;">
+
     </div>
-</div>
 </body>
 
 </html>

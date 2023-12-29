@@ -6,12 +6,6 @@ const bodyParser = require("body-parser");
 const datas = require("./models/reg.js");
 const Hospitals = require("./models/hospitalData.js");
 
-const multer  = require('multer')
-// const upload = multer({ dest: 'uploads/' })
-
-
-
-
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
@@ -19,7 +13,6 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
-
 
 const { getEnabledCategories } = require("trace_events");
 const { Console } = require("console");
@@ -34,6 +27,9 @@ async function main() {
 }
 
 
+const multer  = require('multer')
+// const upload = multer({ dest: 'uploads/' })
+
 const storage = multer.diskStorage({
     destination: function (req, file, cb) { // cb = call back
       return cb(null, "./uploads"); //null => no condition check kro
@@ -44,9 +40,6 @@ const storage = multer.diskStorage({
   });
 
   const upload = multer({ storage });
-
-
-
 
 
 // const methodOverride = require('method-override')    
@@ -63,16 +56,18 @@ app.get("/", (req, res) => {
     res.render("login.ejs");
 });
 
-
 app.get("/newReg", (req, res) => {
     res.render("newReg.ejs");
 });
 
 app.post("/new", (req, res) => {
-    let { name, email, password } = req.body;
+    let { name, email, password , pin, city, phone} = req.body;
     let newData = new datas({
         name: name,
+        phone : phone,
         email: email,
+        city  : city,
+        pin : pin,
         password: password
     });
     console.log(newData);
@@ -80,10 +75,9 @@ app.post("/new", (req, res) => {
     res.render("login.ejs");
 });
 
-
 app.post("/check", async (req, res) => {
     try {
-        let { email, password } = req.body;
+        let { email, password} = req.body;
 
         let foundData = await datas.findOne({ email: email });
 
@@ -91,7 +85,7 @@ app.post("/check", async (req, res) => {
             res.render("userNotFound.ejs", {data : "No User Found "});
         } else {
             if (foundData.password === password) {
-                res.render("index.ejs");
+                res.render("index.ejs", {name : foundData.name});
             } else {
                 console.log(foundData);
                 res.render("loginFail.ejs");
@@ -103,12 +97,18 @@ app.post("/check", async (req, res) => {
     }
 });
 
-
-app.get("/dlt", async (req, res) => {
-    await datas.deleteMany({});
-    res.render("login.ejs");
+app.post("/search/:id/book", async (req, res) => {
+    let {id} = req.params;
+    let data = await Hospitals.findOne({ _id : id  });
+    console.log(`ID : ${id} is selected`);
+    console.log(`All data : ${data}`);
+    res.render("bookSlot.ejs", {data});
 });
 
+app.get("/dlt", async (req, res) => {
+    // await datas.deleteMany({});
+    res.render("login.ejs");
+});
 
 app.post("/FormFill", upload.single("img"), (req, res) => {
     let { city,
@@ -128,10 +128,8 @@ app.post("/FormFill", upload.single("img"), (req, res) => {
         img,
      } = req.body;
 
-     
-
+    
      let pathh = req.file.path;
-
      pathh = pathh.substring(8);
 
 
@@ -155,23 +153,21 @@ app.post("/FormFill", upload.single("img"), (req, res) => {
 
     console.log(newData);
     console.log(pathh);
-    // console.log(req.file);
-    // console.log("And bhai ye bhi");
-    
-    // console.log(path);
     newData.save();
     res.render("index.ejs");
 });
-
 
 app.get("/book", (req, res) => {
     res.render("book.ejs");
 });
 
+app.get("/profile", (req, res) => {
+    res.send(`will complete this later on.......`);
+});
+
 app.get("/home", (req, res) => {
     res.render("index.ejs");
 });
-
 
 app.post("/search", async (req, res) => {
     let { city, specialization } = req.body;
@@ -181,15 +177,11 @@ app.post("/search", async (req, res) => {
     if(matchedHospitals.length === 0){
         res.render("userNotFound.ejs", {data : "No Hospitals are avl. right now"});
     }
-
-
     res.render("show.ejs", {matchedHospitals});
 
 });
 
-
 app.get("/FormFill", (req, res) => {
-    // await datas.deleteMany( {});
     res.render("hospitalDataInput.ejs");
 });
 
@@ -203,9 +195,6 @@ app.get("/FormFill", (req, res) => {
 //     console.log(req.file);
 //     res.render("hospitalDataInput.ejs");
 // });
-
-
-
 
 
 // let hospitalDataObjectsDelhi = [
