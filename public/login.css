@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #007bff81;
+  background-color: #2a74c4;
 }
 
 .login-container {
@@ -23,11 +23,12 @@ body {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 90px 70px;
-  width: 70%;
+  width: 78%;
+  box-shadow: 0 0 3rem rgba(255, 255, 255, 0.685);
 }
 
 .right img {
-  height: 33rem;
+  height: 37rem;
 }
 
 .login-form h2 {

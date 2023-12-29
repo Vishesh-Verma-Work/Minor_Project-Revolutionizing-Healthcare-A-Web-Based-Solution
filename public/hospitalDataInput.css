@@ -2,6 +2,7 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-color: #2a74c4;
   }
   
 h1 {
@@ -9,14 +10,21 @@ h1 {
   box-shadow: 0 0 4rem #007bff3b;
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: #007bff;
-  color: white;
+  background-color: #fff;
+  color: #2a74c4;
   font-weight: 700;
   padding-top: 1.5rem;
+  font-weight: 700;
+  font-size: 2.6rem;
+  box-shadow: 0 0 3rem rgba(255, 255, 255, 0.685);
   padding-bottom: 1.5rem;
   margin-bottom: 4rem ;
+  margin: 3rem 0;
 }
 
+a {
+  text-decoration: none;
+}
 
   form {
     width: 800px;
@@ -29,13 +37,14 @@ h1 {
   
 .main {
   z-index: 7;
+  box-shadow: 0 0 3rem rgba(255, 255, 255, 0.685);
   margin: 0 auto;
   width: 88%;
-  box-shadow: 0 0 4rem #007bff3b;
-  border: 2px solid #007bff;
+  /* border: .5px solid black; */
   padding: 3rem 2rem;
   display: flex;
   flex-direction: row-reverse;
+  background-color: white;
   justify-content: space-around;
   align-items: start;
 }
@@ -89,3 +98,83 @@ h1 {
     border: 1px solid #007bff;
   }
  
+
+
+
+
+  
+.footer {
+  box-shadow: 0 0 2rem rgba(255, 255, 255, 0.534);
+  background-color: #fff;
+  color: #fff;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.footer h3 {
+  text-align: center;
+  color: #2a74c4;
+  font-size: 2.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.footer p {
+  font: bold;
+  color: black;
+}
+
+.services ul,
+.connect ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services ul li,
+.connect ul li {
+  color: black;
+  margin-bottom: 5px;
+}
+
+.connect p {
+  color: black;
+}
+
+
+.social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+
+
+.connect i {
+  color: black;
+  margin: 0 1rem;
+  font-size: 1.6rem;
+}
+
+.services a {
+  color: black;
+}
+
+.services {
+  padding: 0 2rem;
+  width: 28%;
+}
+
+.connect {
+  padding: 0 2rem;
+  width: 33%;
+}
+
+.brand {
+  padding: 0 2rem;
+  width: 33%;
+}
+
+.icn {
+  width: 100%;
+  text-align: center;
+}

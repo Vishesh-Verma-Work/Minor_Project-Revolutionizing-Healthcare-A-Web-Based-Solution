@@ -70,6 +70,7 @@ body {
 .right-content {
     box-shadow: 0 0 30px #1b1b1bbd;
     border-radius: 2rem 0 0 2rem;
+    box-shadow: 0 0 3rem rgba(255, 255, 255, 0.685);
     padding-left: 4rem;
     display: flex;
     flex-direction: column;
@@ -151,9 +152,7 @@ body {
         height: 38rem;
     }
 
-    .content {
-        /* height: 40rem; */
-    }
+    
 
     .right-content {
         padding-top: 2rem;
@@ -672,6 +671,9 @@ form {
     text-align: center;
 }
 
+
+
+
 .cards {
     /* border: 2px solid pink; */
     display: flex;
@@ -682,6 +684,7 @@ form {
 
 .heading h1 {
     font: bold;
+    font-weight: 700;
     font-size: 3.3rem;
     text-align: center;
     padding: 2rem;
