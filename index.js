@@ -127,7 +127,8 @@ app.post("/search/:id/book/:slot/payment", async (req, res) => {
 
 
 app.get("/dlt", async (req, res) => {
-    res.render("login.ejs");
+//    await Hospitals.deleteMany({});
+//     res.render("login.ejs");
 });
 
 app.get("/emergency/book", async (req, res) => {
