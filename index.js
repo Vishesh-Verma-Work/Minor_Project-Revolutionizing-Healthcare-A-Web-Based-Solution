@@ -107,7 +107,7 @@ app.post("/search/:id/book", async (req, res) => {
 });
 
 
-app.post("/search/:id/book/:slot", async (req, res) => {
+app.post("/search/:id/book/:slot/payment", async (req, res) => {
     const { id, slot } = req.params;
     console.log(`Slot ID : ${slot} is selected`);
     try {
@@ -116,7 +116,8 @@ app.post("/search/:id/book/:slot", async (req, res) => {
         { $set: { [slot]: true } }, 
         { new: true }
       );
-      res.send(`Slot ${slot} for hospital ${id} booked.`);
+      res.redirect("https://business.paytm.com/payment-gateway");
+
     } catch (error) {
       console.error(error);
       res.status(500).send("Error updating slot.");
@@ -131,6 +132,11 @@ app.get("/dlt", async (req, res) => {
 
 app.get("/emergency/book", async (req, res) => {
     res.render("emergencySelect.ejs");
+});
+
+
+app.get("/flow", (req, res) => {
+    res.render("flow.ejs");
 });
 
 app.post("/FormFill", upload.single("img"), (req, res) => {
@@ -192,6 +198,8 @@ app.get("/home", (req, res) => {
     res.render("index.ejs");
 });
 
+
+  // normal wale ke liye
 app.post("/search", async (req, res) => {
     let { city, specialization } = req.body;
 
@@ -203,6 +211,19 @@ app.post("/search", async (req, res) => {
     res.render("show.ejs", {matchedHospitals});
 
 });
+
+  // emergency wale ke liye
+app.post("/emergency/search", async (req, res) => {
+    let { city, specialization } = req.body;
+
+    const matchedHospitals = await  Hospitals.find({ city: city, specialization: specialization })
+ 
+    if(matchedHospitals.length === 0){
+        res.render("userNotFound.ejs", {data : "No Hospitals are avl. right now"});
+    }
+    res.render("emergencyShow.ejs", {matchedHospitals});
+});
+
 
 app.get("/FormFill", (req, res) => {
     res.render("hospitalDataInput.ejs");

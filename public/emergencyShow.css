@@ -10,7 +10,7 @@
 body {
     text-align: center;
     /* background-color: #4E46A6; */
-    background-color: #2a74c4;
+    background-color: rgba(255, 0, 0, 0.411);
 }
 
 .tar {
@@ -81,30 +81,29 @@ span {
 }
 
 .sec {
+    
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-   
+    justify-content: space-around;
+    align-items: start;
     border-radius: 1rem;
     margin: 2rem;
-    padding: 0rem 4rem;
-    width:70%;
+    padding: 2rem;
+    width:59%;
     text-align: start;
-    border: 1.2px solid black;
    
-        background: linear-gradient(45deg, rgba(27, 133, 255, 0.103) 33%, transparent 1%),
-                    linear-gradient(-45deg, rgba(27, 107, 255, 0.103) 33%, transparent 1%);
+        background: linear-gradient(45deg, #0566ce36 33%, transparent 1%),
+                    linear-gradient(-45deg, #337fd133 33%, transparent 1%);
         background-size: 5rem;
-        background-color: #fff;
+        background-color: white;
+        box-shadow: 0 0 3rem rgba(255, 255, 255, 0.685);
+    
 }
 
 .img img {
     height: 16rem;
-    margin-bottom: 2rem;
-    border-radius: 1rem;
+    margin: 0 0 0 15rem;
     width: 30rem;
-    border: .4px solid black;
-    box-shadow: 0 0 1.4rem rgba(13, 35, 236, 0.349);
+    /* width: 50%; */
 }
 
 h2 {
@@ -135,12 +134,16 @@ button {
     cursor: pointer;
     border: 1px solid black;
     font-weight: 700;
-    color: #fff;
+    color: rgb(224, 48, 48);
     border-radius: .5rem;
     background-color: #fff;
     padding: .8rem 2.4rem;
 }
 
+button:hover {
+    color: white;
+    background-color: rgb(165, 25, 25);
+}
 
 .main {
     padding: 2rem;
@@ -155,68 +158,32 @@ button {
 .line {
     margin: 2rem 0;
     width: 88%;
-    background-color: black;
+    background-color: red;
     height: .01rem;
 }
 
-.r {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
 
-.l {
-    padding: 4rem 2rem;
-    border-radius: 1rem;
-    box-shadow: 0 0 1rem #2a74c4;
-    background-color: #fff;
-}
-
-.timeSlot h3 {
-    margin-bottom: 1.26rem;
-    /* background-color: red; */
-}
-
-.timeSlot {
-    margin: 3.2rem 0;
-}
-
-.time {
-    padding: 0 6rem 2rem 3rem;
-    padding-top: 2rem;
-    /* background-color: blue; */
-}
-
-.btnn {
-    margin: .5rem 0;
-}
-
-
+  
 h1 {
     width: 100%;
-    box-shadow: 0 0 4rem #007bff3b;
+
     text-align: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     background-color: #fff;
-    color: #2a74c4;
+    color: rgba(255, 0, 0, 0.842);
     font-weight: 700;
     padding-top: 1.5rem;
     font-weight: 700;
     font-size: 2.6rem;
-    box-shadow: 0 0 3rem rgba(255, 255, 255, 0.685);
+    box-shadow: 0 0 3rem rgba(177, 14, 14, 0.685);
     padding-bottom: 1.5rem;
     margin-bottom: 4rem ;
     margin: 3rem 0;
   }
+  
 
-  .booked {
-    background-color: rgba(255, 0, 0, 0.842);
-}
-
-.notBooked{
-    background-color: rgba(7, 189, 7, 0.842);
-}
-
-#down {
-    color: black;
-}
+  .l h3 {
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: #ce1c054f;
+  }

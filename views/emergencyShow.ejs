@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avl Data</title>
+    <link rel="stylesheet" href="/emergencyShow.css">
+</head>
+
+<body>
+
+    <h1>Hospitals Near by location</h1>
+
+    <div class="data">
+        <% for(data of matchedHospitals) { %>
+            <div class="sec">
+                <div class="l">
+                    <div class="name">
+                        <div class="ejs">
+                            <%= data.hospitalName %>
+                        </div>
+                    </div>
+                  
+
+                  
+
+
+
+                    <div class="line"></div>
+
+
+
+                    <div class="dname">
+                        <div class="ejs">
+                            <%= data.doctorName %>
+                        </div>
+                    </div>
+
+                    <div class="des dess">
+                        <h4 style="display: inline-block;">Specialization : </h4>
+                        <div class="ejs">
+                            <%= data.specialization %>
+                        </div>
+                    </div>
+
+                   
+
+                    <div class="des dess ">
+                        <h4 style="display: inline-block;">Consulting Fee : </h4>
+                        <div class="rup" style="display: inline-block;">
+                            <span>&#8377;</span>
+                        </div>
+                        <div class="ejs">
+                            <%= data.consultingFree %>
+                        </div>
+                    </div>
+
+
+                    <h3>Emergency Number : <%= data.emergencyNumber %></h3>
+
+                </div>
+                <div class="img">
+                    <img src="/uploads/<%=data.img%>" alt="hell">
+                </div>
+            </div>
+
+            <% } %>
+
+
+    </div>
+
+    <form action="/emergency/book" method="GET" style="display: inline-block;">
+        <button type="submit">Back To Select</button>
+    </form>
+    &nbsp; &nbsp;
+    <form action="/home" method="GET" style="display: inline-block;">
+        <button type="submit">Back To Home</button>
+    </form>
+
+    <div class="space"></div>
+
+</body>
+
+</html>
