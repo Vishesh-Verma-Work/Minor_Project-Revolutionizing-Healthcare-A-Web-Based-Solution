@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const mongoose = require('mongoose');
-const bodyParser = require("body-parser");
+const bodyParser = require("body-parser"); 
 const datas = require("./models/reg.js");
 const Hospitals = require("./models/hospitalData.js");
 
@@ -40,7 +40,7 @@ const multer  = require('multer')
 // const upload = multer({ dest: 'uploads/' })
 
 const storage = multer.diskStorage({
-    destination: function (req, file, cb) { // cb = call back
+    destination: function (req, file, cb) { 
       return cb(null, "./uploads"); //null => no condition check kro
     },
     filename: function (req, file, cb) {
@@ -68,6 +68,8 @@ app.get("/newReg", (req, res) => {
     res.render("newReg.ejs");
 });
 
+
+// sign-up
 app.post("/new", (req, res) => {
     let { name, email, password , pin, city, phone} = req.body;
     let newData = new datas({
@@ -83,6 +85,7 @@ app.post("/new", (req, res) => {
     res.render("login.ejs");
 });
 
+// checking auth
 app.post("/check", async (req, res) => {
     try {
         let { email, password} = req.body;
@@ -93,7 +96,7 @@ app.post("/check", async (req, res) => {
             res.render("userNotFound.ejs", {data : "No User Found "});
         } else {
             if (foundData.password === password) {
-                res.render("index.ejs", {name : foundData.name});
+                res.render("unique.ejs", {userID : foundData._id});
             } else {
                 console.log(foundData);
                 res.render("loginFail.ejs");
@@ -135,9 +138,10 @@ app.post("/search/:id/book/:slot/payment", async (req, res) => {
 
 
 
+//   100% Danger!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 app.get("/dlt", async (req, res) => {
-//    await Hospitals.deleteMany({});
-//     res.render("login.ejs");
+   await Hospitals.deleteMany({});
+    res.render("login.ejs");
 });
 
 app.get("/emergency/book", async (req, res) => {
@@ -252,10 +256,21 @@ app.get("/done", (req,res)=> {
 })
 
 
+app.post("/slip", async (req,res)=> {
+    req.params
+    try {
+        let { userID } = req.body;
 
+        let data = await datas.findOne({ _id : userID });
+        console.log(data);
+        res.render("slip.ejs", {name : data.name, email : data.email, phone : data.phone, ID : data._id});
+      
+    } catch (err) {
+        console.log(err);
+        res.send("Wrong ID");
+    }
 
-
-
+})
 
 
 

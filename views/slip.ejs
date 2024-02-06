@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./payment-alert.css">
+</head>
+<body>
+    <div class="container">
+        <div class="alert-box">
+            <img src="./img/slip.png" alt="payment IMG">
+            <h2>Download Your Appointment Slip</h2> <br> 
+            <div class="b">
+                <h4>Name : </h4> <p class="para" id="name"><%= name %></p> <br>
+                <h4>Phone Number : </h4> <p class="para" id="phone"><%= phone %></p> <br>
+                <h4>Email : </h4> <p class="para" id="email"><%= email %></p> <br>
+                <h4>Reference ID: </h4> <p class="para" id="id"><%= ID %></p> <br> <br>
+            </div>
+            <div class="buttons">
+                <button class="proceed-btn" onclick="downloadData()">Download Slip</button> 
+                <a class="proceed-btn" href="/home">Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadData() {
+         
+            const name = document.getElementById('name').textContent;
+            const phone = document.getElementById('phone').textContent;
+            const email = document.getElementById('email').textContent;
+            const id = document.getElementById('id').textContent;
+
+        
+            const data = `Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nReference ID: ${id}`;
+
+        
+            const blob = new Blob([data], { type: 'text/plain' });
+
+
+            const url = window.URL.createObjectURL(blob);
+
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'appointment_slip.txt';
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

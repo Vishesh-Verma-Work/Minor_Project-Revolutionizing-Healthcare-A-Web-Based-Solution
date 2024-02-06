@@ -4,44 +4,32 @@
     <meta charset="utf-8" />
     <title>Razorpay Web-Integration</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="./payment-alert.css">
   </head>
 
   <body>
-    <hr />
 
-    <div style="display: inline-block">
-      <img
-        src="https://cdn.pixabay.com/photo/2014/04/03/10/55/t-shirt-311732_960_720.png"
-        alt=""
-        width="100px"
-        height="100px"
-      />
-      <p>Shirt</p>
-      <p><b>Amount:- Rs. 500</b></p>
-      <form class="pay-form">
-        <input type="hidden" name="name" value="Shirt" />
-        <input type="hidden" name="amount" value="500" />
-        <input type="hidden" name="description" value="Shirt Buying" />
-        <input type="submit" value="Pay Now" />
-      </form>
-    </div>
+    <div class="container">
+      <div class="alert-box">
+          <img src="./img/payment.jpg" alt="payment IMG">
+          <h2>Registration Fee Required</h2>
+          <p>To proceed with your registration, a mandatory fee of ₹499 is required. Please choose one of the options below:</p>
+          <div class="buttons">
+            <button class="cancel-btn"><a href="/home">Cancel Booking</a></button>
+            <form class="pay-form">
+              <input type="hidden" name="name" value="Shoes" />
+              <input type="hidden" name="amount" value="499" />
+              <input type="hidden" name="description" value="Shoes Buying" />
+              <button  type="submit" class="proceed-btn" value="pay now">Proceed to Payment</button>
+            </form>
+          </div>
+      </div>
+  </div>
+   
+      
 
-    <div style="display: inline-block">
-      <img
-        src="https://cdn.pixabay.com/photo/2013/07/12/18/20/shoes-153310_960_720.png"
-        alt=""
-        width="100px"
-        height="100px"
-      />
-      <p>Shoes</p>
-      <p><b>Amount:- Rs. 1500</b></p>
-      <form class="pay-form">
-        <input type="hidden" name="name" value="Shoes" />
-        <input type="hidden" name="amount" value="1500" />
-        <input type="hidden" name="description" value="Shoes Buying" />
-        <input type="submit" value="Pay Now" />
-      </form>
-    </div>
+
+
   </body>
 </html>
 

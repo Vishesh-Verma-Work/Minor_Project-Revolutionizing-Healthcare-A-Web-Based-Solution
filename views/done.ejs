@@ -4,13 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        body {
-            background-color: aqua;
-        }
-    </style>
+    <link rel="stylesheet" href="./payment-alert.css">
 </head>
 <body>
-    <h3>payment done</h3>
+    <div class="container">
+        <div class="alert-box">
+            <img src="./img/Successful purchase-pana.png" alt="payment IMG">
+            <h2>Payment Submitted Successfully</h2>
+            <p>Your payment has been successfully submitted.
+                To generate your payment slip, please enter your unique profile ID below.
+                Upon submission, your payment slip will be generated automatically.
+                Thank you for using Health Care Simplified!</p>
+            <div class="buttons">
+              <form  method="POST" action="/slip">
+                <input type="text"  required name="userID" placeholder="User Unique ID">
+                <button class="proceed-btn" >Generate Slip</button>
+              </form>
+            </div>
+        </div>
+    </div>
+     
 </body>
 </html>
