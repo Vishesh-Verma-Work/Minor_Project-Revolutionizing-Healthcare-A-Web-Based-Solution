@@ -7,12 +7,15 @@ const datas = require("./models/reg.js");
 const Hospitals = require("./models/hospitalData.js");
 
 
+var http = require('http').Server(app);
+
+
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));4
 
-require('dotenv').config({ path: './config/config.env' });
+// require('dotenv').config({ path: './config/config.env' });
 
 
 app.use(express.static(path.join(__dirname, "public")));
@@ -52,12 +55,12 @@ const storage = multer.diskStorage({
 // app.use(methodOverride('_method'))
 
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is listening on port : ${process.env.PORT}`);
+app.listen(3000, () => {
+    console.log(`Server is listening on port : 3000`);
     // console.log(`Server is listening on port : done`);
 });
 
-app.get("/", (req, res) => {
+app.get("/login", (req, res) => {
     res.render("login.ejs");
 });
 
@@ -121,7 +124,8 @@ app.post("/search/:id/book/:slot/payment", async (req, res) => {
         { $set: { [slot]: true } }, 
         { new: true }
       );
-      res.redirect("https://business.paytm.com/payment-gateway");
+      res.redirect("/")
+
 
     } catch (error) {
       console.error(error);
@@ -234,6 +238,41 @@ app.post("/emergency/search", async (req, res) => {
 app.get("/FormFill", (req, res) => {
     res.render("hospitalDataInput.ejs");
 });
+
+
+
+
+const paymentRoute = require('./routes/paymentRoute');
+
+app.use('/',paymentRoute);
+
+
+app.get("/done", (req,res)=> {
+    res.render("done.ejs");
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
