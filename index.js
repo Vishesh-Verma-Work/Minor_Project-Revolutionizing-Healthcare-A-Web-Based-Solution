@@ -85,6 +85,7 @@ app.post("/new", (req, res) => {
     res.render("login.ejs");
 });
 
+
 // checking auth
 app.post("/check", async (req, res) => {
     try {
@@ -242,9 +243,6 @@ app.post("/emergency/search", async (req, res) => {
 app.get("/FormFill", (req, res) => {
     res.render("hospitalDataInput.ejs");
 });
-
-
-
 
 const paymentRoute = require('./routes/paymentRoute');
 
