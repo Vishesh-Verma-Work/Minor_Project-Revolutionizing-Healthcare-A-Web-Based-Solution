@@ -8,6 +8,9 @@
 }
 
 body {
+    background-image: url('../img/WhatsApp Image 2024-04-26 at 12.37.39 AM.jpeg');
+    background-size: cover;
+    background-opacity : .5;
     text-align: center;
     /* background-color: #4E46A6; */
     background-color: #4487cf;
@@ -181,3 +184,80 @@ h1 {
     margin: 3rem 0;
   }
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #09427D; /* Background color */
+    box-shadow: 0 .4rem 2rem  rgba(255, 255, 255, 0.432); /* Shadow */
+    position: sticky;
+    top: 0;
+    margin-bottom: 6rem;
+    z-index: 999;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .left a {
+    font-size: 2rem;
+    margin-left: 2rem;
+  }
+
+  .left li {
+    margin-right: 20px; /* Spacing between elements */
+  }
+  
+
+  a:hover {
+    color: #d3d3d3; /* Hover color */
+  }
+
+  .right a {
+    font-size: 1.15rem;
+  }
+  
+  .right img {
+    margin: .8rem 2rem .8rem 0;
+ 
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2.5rem;
+}
+
+.list i {
+    transition: 0ms;
+    margin-right: .88rem;
+    font-size: 1.33rem;
+    color: white;
+}
+
+
