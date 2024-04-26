@@ -1,0 +1,3 @@
+#Health-Care Simplifiede
+
+Healthcare Simplified is an innovative online platform designed to revolutionize healthcare accessibility and resource management. Our platform connects patients with hospitals and doctors, facilitating easy appointment booking and providing real-time updates on test availability. Unlike traditional healthcare systems, Healthcare Simplified offers a centralized hub, akin to popular food delivery services like Swiggy, where users can access a wide range of healthcare services from anywhere. By promoting economic growth and job creation within the healthcare sector, Healthcare Simplified aims to streamline healthcare processes while enhancing patient experience.
